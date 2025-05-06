@@ -4,7 +4,6 @@ clear all; close all; clc;
 addpath(genpath(pwd));
 projectName = 'FSTLoc';
 bidsDir = '~/Desktop/MRI/FSTloc';
-serverDir = '/Volumes/Vision/MRI/recon-bank';
 githubDir = '~/Documents/GitHub';
 fsDir = '/Applications/freesurfer/7.4.1';
 addpath(genpath(fullfile(githubDir, 'wpToolbox')));
@@ -12,11 +11,11 @@ setup_user(projectName,bidsDir,githubDir,fsDir);
 
 %%
 subjects = {'sub-0037','sub-0201','sub-0248','sub-0250','sub-0255','sub-0392','sub-0395','sub-0397','sub-0426'};
-whichSub = 7;
+whichSub = 1;
 subject = subjects{whichSub};
-[roi, roil, roir, numl, numr] = get_my_roi(subject,serverDir);
+[roi, roil, roir, numl, numr] = get_my_roi(subject,bidsDir);
 roil{3}(ismember(roil{3},intersect(roil{3},roil{5})))=[];
-vals = load_mgz(subject,serverDir,'motion_base/mt+2','cd/cd','transparent/oppo3','T1MapMyelin/myelin0.5','prfvista_mov/vexpl','prfvista_mov/eccen','prfvista_mov/sigma');
+vals = load_mgz(subject,bidsDir,'motion_base/mt+2','cd/cd','transparent/oppo3','T1MapMyelin/myelin0.5','prfvista_mov/vexpl','prfvista_mov/eccen','prfvista_mov/sigma');
 %%
 % 2D motion
 [~, bb, ~, dd] = ttest2(vals(roil{5},1),vals(roil{3},1))
