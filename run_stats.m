@@ -185,4 +185,4 @@ plot_shift(vals(:,1),roi([5 3]));xlim([0.5 2.5]);ylim([0 0.5]);set(gca, 'Color',
 %tmp = convert_pc(vals);
 badR2size = vals(vals(:,1)>0.05,2);
 histogram(badR2size,20)
-mean(badR2size) 
+mean(badR2size)
