@@ -1,9 +1,6 @@
 %% define path
-subject = 'sub-0230';
-bidsDir = '/Volumes/Vision/MRI/recon-bank';
-bidsDir = '/Users/pw1246/Documents/MRI/CueIntegration2024';
-view_fv(subject,bidsDir,'cueBold/bino')
-%bidsDir = '/Volumes/Vision/UsersShare/Rania/Project_dg/data_bids';
+subject = 'sub-0037';
+bidsDir = '~/Desktop/forOSF/test';
 %%
 
 %%
