@@ -3,8 +3,7 @@ clear all; close all; clc;
 % setup path
 addpath(genpath(pwd));
 projectName = 'FSTLoc';
-bidsDir = '~/Desktop/MRI/FSTloc';
-serverDir = '/Volumes/Vision/MRI/recon-bank';
+bidsDir = '~/Desktop/forOSF/test';
 githubDir = '~/Documents/GitHub';
 fsDir = '/Applications/freesurfer/7.4.1';
 addpath(genpath(fullfile(githubDir, 'wpToolbox')));

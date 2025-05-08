@@ -30,12 +30,6 @@ switch space
         spaceMap = space;
 end
 
-% Load curvature data
-lcurv = read_curv(fullfile(fspth, 'surf', 'lh.curv'));
-rcurv = read_curv(fullfile(fspth, 'surf', 'rh.curv'));
-leftidx  = 1:numel(lcurv);
-rightidx = (1:numel(rcurv))+numel(lcurv);
-
 % Task analysis setup
 whichTask = 'motion';
 
@@ -90,12 +84,14 @@ switch whichTask
         resultsdir = [bidsDir '/derivatives/biomotion/' sub];
 end
 
-% Create results directory
-mkdir(resultsdir)
-
-% Save results as mgz files (commented out)
+%% Save results as mgz files 
+% mkdir(resultsdir)
 % val = inout;
 % valName = 'inout';
+% lcurv = read_curv(fullfile(fspth, 'surf', 'lh.curv'));
+% rcurv = read_curv(fullfile(fspth, 'surf', 'rh.curv'));
+% leftidx  = 1:numel(lcurv);
+% rightidx = (1:numel(rcurv))+numel(lcurv);
 % mgz = MRIread(fullfile(fspth, 'mri', 'orig.mgz'));
 % mgz.vol = [];
 % mgz.vol = val(leftidx);
